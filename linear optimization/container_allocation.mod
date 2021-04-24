@@ -16,7 +16,7 @@ param CpuDemand {j in Containers};
 # Variable declaration
 var Allocation {i in Servers, j in Containers} >= 0 binary;
 # objective function
-maximize ExecutionSpeed:
+minimize ExecutionSpeed:
 	 sum{i in Servers, j in Containers}Allocation[i,j]*(CpuDemand[j]/CpuSpeed[i]);   
 # constraints
 subject to memorylimit {i in Servers}:
