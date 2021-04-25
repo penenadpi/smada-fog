@@ -4,7 +4,6 @@ set Servers:=1..numServers;
 set Containers:=1..numContainers;
 param Capacity {i in Servers};       
 param Demand {j in Containers}; 
-param Speed {i in Servers, j in Containers};
 param ServerLocation {i in Servers};
 param ContainerEnvironment {j in Containers};
 param CpuSpeed {i in Servers};
@@ -26,4 +25,4 @@ subject to alloc {j in Containers}:
 	sum{i in Servers}Allocation[i,j]=1;
 # constraints	
 subject to executionenv {i in Servers}:
-	sum{j in Containers}abs((Architecture[i]-Version[j]))*abs((ServerLocation[i]-ContainerEnvironment[j]))*Allocation[i,j] = 0;
+	sum{j in Containers}(abs((Architecture[i]-Version[j]))+abs((ServerLocation[i]-ContainerEnvironment[j])))*Allocation[i,j] = 0;

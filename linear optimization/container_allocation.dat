@@ -8,7 +8,7 @@ param Capacity:=
 	4   60
 	5	15
 	6	300
-	7	800
+	7	80
 	8	15;
 	
 param Demand:=
@@ -34,14 +34,7 @@ param CpuSpeed:=
 	7	40
 	8	7;	
 	
-	
 
-param Speed:
-      1 2 3 4 5 6 7 8 9 10:=
-  1   1 2 1 2 1 1 1 2 1 1
-  2   2 2 3 3 3 9 9 1 9 9 
-  3   1 2 3 4 5 6 7 8 9 10
-  4   1 2 1 1 1 1 1 1 1 1;
 
 param ContainerEnvironment:=
 	1   0
